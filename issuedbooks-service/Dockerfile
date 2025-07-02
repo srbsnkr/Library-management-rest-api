@@ -12,10 +12,11 @@ VOLUME /tmp
 WORKDIR /app
 
 # Copy the jar from the builder stage
-COPY --from=builder /app/target/user-service-0.0.1-SNAPSHOT.jar ./app.jar
+COPY --from=builder /app/target/issuedbooks-service-0.0.1-SNAPSHOT.jar ./app.jar
 
 # Expose the app port
-EXPOSE 4000
+EXPOSE 4001
+EXPOSE 9001
 
 # Run the app
 ENTRYPOINT ["java", "-jar", "app.jar"]
